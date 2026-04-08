@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <h1>Welcome to my Plant-Sitting Platform!</h1>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Plant-Sitting Marketplace | Find Trusted Sitters</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
+    <header class="site-header">
+        <div class="logo">
+            <h2>Leaf & Guardian</h2> </div>
+        <nav class="primary-nav">
+            <ul>
+                <li><a href="#become-sitter">Become a Sitter</a></li>
+                <li><a href="#sign-in">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Find the perfect sitter for your leafy friends.</h1>
+                <p>Book trusted, local plant sitters while you are away.</p>
+                
+                <div class="search-bar-container">
+                    <form id="sitterSearchForm" class="search-form">
+                        <input type="text" id="locationInput" placeholder="Zip code or neighborhood..." required>
+                        <input type="date" id="datesInput" required>
+                        <button type="submit" id="searchSubmitBtn">Search Sitters</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="sitter-results-section">
+            <h2>Top Rated Sitters Near You</h2>
+            <div id="sitterGrid" class="sitter-grid">
+                </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Plant-Sitting Marketplace Capstone. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
