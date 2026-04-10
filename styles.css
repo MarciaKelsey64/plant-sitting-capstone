@@ -67,7 +67,7 @@ body {
 
 .hero-content p {
     font-size: 1.2rem;
-    color: #555;
+    color: #333; /* Darkened from #555 for WCAG AA compliance */
     margin-bottom: 2.5rem;
 }
 
@@ -105,7 +105,7 @@ body {
 
 .search-form button {
     padding: 1rem 2.5rem;
-    background: #2ea44f;
+    background: #1a7f37; /* Darkened from #2ea44f for WCAG AA compliance */
     color: white;
     border: none;
     border-radius: 50px;
@@ -116,7 +116,7 @@ body {
 }
 
 .search-form button:hover {
-    background: #23863c;
+    background: #115c26; /* Darkened the hover state to match */
 }
 
 /* Temporary spacing for our next step */
