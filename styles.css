@@ -292,3 +292,75 @@ body {
 .search-container button {
     flex-shrink: 0; /* Tells the green button to NEVER shrink, forcing the inputs to shrink instead */
 }
+
+/* --- Cross-Browser Date Input Fix --- */
+input[type="date"] {
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    
+    /* 1. Add the icon as a background image */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+/* 2. Stretch the invisible trigger to cover the whole box */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0; /* Keeps the native icon hidden but functional */
+    cursor: pointer;
+}
+
+/* 3. Specifically hide the duplicate Firefox native icon */
+input[type="date"]::-moz-calendar-picker-indicator {
+    display: none;
+}
+
+/* This only triggers on screens smaller than 600px (Mobile) */
+@media (max-width: 600px) {
+    /* Target the main container you showed in the screenshot */
+    .search-bar-container {
+        width: 95% !important;
+        margin: 20px auto !important;
+        background: transparent !important; /* Remove the pill background on mobile if desired */
+        box-shadow: none !important;
+    }
+
+    /* Target the form inside the container */
+    .search-form {
+        flex-direction: column !important; /* This is the magic stacking command */
+        display: flex !important;
+        gap: 15px !important;
+        background-color: white !important; /* Put the white background on the form itself */
+        padding: 20px !important;
+        border-radius: 20px !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+    }
+
+    /* Make the inputs and button stretch to full width */
+    .search-form input, 
+    .search-form button {
+        width: 100% !important;
+        margin: 0 !important;
+        border: 1px solid #ddd !important;
+        border-radius: 10px !important;
+        height: 55px !important; /* Thicker tap targets for mobile thumbs */
+        font-size: 16px !important; /* Prevents iOS from zooming in on focus */
+    }
+
+    /* Hide the vertical lines (dividers) because they look weird in a vertical list */
+    .divider {
+        display: none !important;
+    }
+}
