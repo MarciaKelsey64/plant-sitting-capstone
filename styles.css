@@ -364,3 +364,49 @@ input[type="date"]::-moz-calendar-picker-indicator {
         display: none !important;
     }
 }
+
+.reviews-section {
+    padding: 60px 20px;
+    background-color: #f9fbf9;
+    text-align: center;
+}
+
+.reviews-container {
+    display: flex;
+    flex-direction: column; /* This stacks them vertically */
+    align-items: center;    /* This centers the stack */
+    gap: 20px;
+    max-width: 800px;       /* Keeps the stack from being too wide */
+    margin: 0 auto;
+}
+
+.review-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;          /* Aligns image and text side-by-side inside the card */
+    align-items: center;
+    gap: 20px;
+    width: 100%;            /* Makes cards uniform width */
+    text-align: left;       /* Keeps the text readable */
+}
+
+.reviewer-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;     /* Makes the picture a circle */
+    object-fit: cover;
+    border: 3px solid #2d5a27;
+}
+
+.review-text {
+    font-style: italic;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.review-author {
+    font-weight: bold;
+    color: #2d5a27;
+}

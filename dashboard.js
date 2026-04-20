@@ -31,7 +31,7 @@ function renderDashboard() {
     // 2. Count how many pending jobs we have and update the red notification badge
     const pendingJobs = bookings.filter(job => job.status === "pending");
     pendingCount.innerText = pendingJobs.length;
-    
+
     // Hide the red badge if there are zero pending requests
     if (pendingJobs.length === 0) {
         pendingCount.style.display = 'none';
@@ -39,7 +39,7 @@ function renderDashboard() {
 
     // 3. Loop through ALL bookings and sort them into the correct column based on their status
     bookings.forEach(job => {
-        
+
         if (job.status === "pending") {
             // Build the Pending Card (Includes Accept/Decline Buttons)
             const cardHTML = `
@@ -59,7 +59,7 @@ function renderDashboard() {
                 </div>
             `;
             pendingList.innerHTML += cardHTML;
-            
+
         } else if (job.status === "upcoming") {
             // Build the Upcoming Card (No buttons, just the confirmed job details)
             const cardHTML = `
@@ -90,11 +90,11 @@ function renderDashboard() {
 function acceptJob(targetId) {
     // 1. Find the exact job in the database
     const jobIndex = bookings.findIndex(job => job.id === targetId);
-    
+
     // 2. Change its status!
     if (jobIndex !== -1) {
         bookings[jobIndex].status = "upcoming";
-        
+
         // 3. Tell the screen to redraw itself with the new data
         renderDashboard();
     }
