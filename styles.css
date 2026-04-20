@@ -1,3 +1,18 @@
+:root {
+    /* Colors */
+    --primary-green: #2d5a27;
+    --text-dark: #333333;
+    --bg-light: #fcfdfc;
+    --white: #ffffff;
+
+    /* Spacing & Sizing */
+    --radius-standard: 8px;
+    --space-md: 20px;
+    --space-lg: 60px;
+}
+
+
+
 /* ==========================================
    1. GLOBAL RESET & TYPOGRAPHY
    ========================================== */
@@ -397,7 +412,7 @@ input[type="date"]::-moz-calendar-picker-indicator {
     height: 80px;
     border-radius: 50%;     /* Makes the picture a circle */
     object-fit: cover;
-    border: 3px solid #2d5a27;
+    border: 3px solid var(--primary-green);
 }
 
 .review-text {
@@ -408,7 +423,7 @@ input[type="date"]::-moz-calendar-picker-indicator {
 
 .review-author {
     font-weight: bold;
-    color: #2d5a27;
+    color: var(--primary-green);
 }
 
 .faq-section {
@@ -455,7 +470,7 @@ input[type="date"]::-moz-calendar-picker-indicator {
     top: 50%;
     transform: translateY(-50%) rotate(90deg); /* Sets the arrow's starting position */
     font-size: 0.9rem;
-    color: #2d5a27; /* Your brand green */
+    color: var(--primary-green); /* Your brand green */
     transition: transform 0.3s ease; /* Makes the arrow animate when clicked */
 }
 
