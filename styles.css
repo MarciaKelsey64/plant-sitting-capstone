@@ -410,3 +410,23 @@ input[type="date"]::-moz-calendar-picker-indicator {
     font-weight: bold;
     color: #2d5a27;
 }
+
+.faq-section {
+    padding: 60px 20px;
+    background-color: #fcfcfc;
+    text-align: center;
+}
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+.faq-item {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+.faq-item h3 {
+    color: #2d5a27; /* Your brand green */
+    font-size: 1.1rem;
+}
