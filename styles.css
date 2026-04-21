@@ -23,10 +23,11 @@ body {
 .btn-primary {
     background-color: var(--primary-green);
     color: var(--white);
-    padding: 10px var(--space-md);
+    padding: 10px 20px;
     border-radius: var(--radius-standard);
     border: none;
     cursor: pointer;
+    white-space: nowrap
 }
 
 .card {
@@ -531,8 +532,9 @@ input[type="date"]::-moz-calendar-picker-indicator {
 /* Newsletter Input Area */
 .signup-group {
     display: flex;
+    align-items: center;
     gap: 10px;
-    margin-bottom: 10px;
+    margin-top: var(--space-md);
 }
 
 .signup-group input {
