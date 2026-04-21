@@ -1,18 +1,10 @@
 :root {
-    /* Colors */
     --primary-green: #2d5a27;
-    --text-dark: #333333;
-    --bg-light: #fcfdfc;
+    --text-dark: #333;
     --white: #ffffff;
-
-    /* Spacing & Sizing */
-    --radius-standard: 8px;
     --space-md: 20px;
-    --space-lg: 60px;
+    --radius-standard: 8px;
 }
-
-
-
 /* ==========================================
    1. GLOBAL RESET & TYPOGRAPHY
    ========================================== */
@@ -26,7 +18,22 @@
 body {
     background-color: #fcfdfc;
     color: #333;
-    line-height: 1.6;
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 10px var(--space-md);
+    border-radius: var(--radius-standard);
+    border: none;
+    cursor: pointer;
+}
+
+.card {
+    background-color: var(--white);
+    padding: var(--space-md);
+    border-radius: var(--radius-standard);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* ==========================================
