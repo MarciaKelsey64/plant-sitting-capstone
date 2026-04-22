@@ -1,3 +1,10 @@
+:root {
+    --primary-green: #2d5a27;
+    --text-dark: #333;
+    --white: #ffffff;
+    --space-md: 20px;
+    --radius-standard: 8px;
+}
 /* ==========================================
    1. GLOBAL RESET & TYPOGRAPHY
    ========================================== */
@@ -11,7 +18,23 @@
 body {
     background-color: #fcfdfc;
     color: #333;
-    line-height: 1.6;
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: var(--radius-standard);
+    border: none;
+    cursor: pointer;
+    white-space: nowrap
+}
+
+.card {
+    background-color: var(--white);
+    padding: var(--space-md);
+    border-radius: var(--radius-standard);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 picture, img {
@@ -406,6 +429,7 @@ input[type="date"]::-moz-calendar-picker-indicator {
     height: 80px;
     border-radius: 50%;     /* Makes the picture a circle */
     object-fit: cover;
+    border: 3px solid var(--primary-green);
     border: 3px solid #2d5a27;
 }
 
@@ -417,5 +441,148 @@ input[type="date"]::-moz-calendar-picker-indicator {
 
 .review-author {
     font-weight: bold;
+    color: var(--primary-green);
+}
+
+.faq-section {
+    padding: 60px 20px;
+    background-color: #fcfcfc;
+    text-align: center;
+}
+
+.faq-container {
+    max-width: 800px; /* Centers and limits the width of the whole FAQ */
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03); /* Subtle, professional shadow */
+    margin-bottom: 15px;
+    text-align: left; /* Keeps the text aligned left within the card */
+    width: 100%; /* Ensures the cards are uniform width */
+    cursor: pointer; /* Makes it feel clickable */
+}
+
+/* Styles the clickable question bar */
+.faq-question {
+    padding: 20px;
+    list-style: none; /* Hides the default bullet/marker */
+    position: relative;
+    outline: none;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Styling the built-in browser carrot (arrow) */
+.faq-question::after {
+    content: '❯'; /* This is the specific arrow you like */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg); /* Sets the arrow's starting position */
+    font-size: 0.9rem;
+    color: var(--primary-green); /* Your brand green */
+    transition: transform 0.3s ease; /* Makes the arrow animate when clicked */
+}
+
+/* Rotates the arrow when the FAQ is opened */
+.faq-item[open] .faq-question::after {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+/* Styles the expanded answer box */
+.faq-answer {
+    padding: 0 20px 20px 20px;
+}
+
+.faq-answer p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.site-footer {
+    background-color: #f9f9f9;
+    padding: 60px 40px 20px;
+    border-top: 1px solid #eee;
+    font-family: sans-serif;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer-col h4 {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.footer-col a {
+    display: block;
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+/* Newsletter Input Area */
+.signup-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: var(--space-md);
+}
+
+.signup-group input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    flex-grow: 1;
+}
+
+.signup-group button {
+    padding: 12px 20px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.disclaimer {
+    font-size: 0.75rem;
+    color: #888;
+    line-height: 1.4;
+}
+
+/* Bottom Row */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    color: #999;
+    font-size: 0.8rem;
+}
     color: #2d5a27;
 }
