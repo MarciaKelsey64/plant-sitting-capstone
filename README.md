@@ -31,3 +31,10 @@ Consistency: Every developer will use the same --primary-green, ensuring no one 
 Efficiency: When a new page needs a "Review" section, a developer can just use the .card class instead of writing new CSS from scratch.
 
 Onboarding: New developers can look at the :root at the top of the file and immediately understand the design system of the site without hunting through 200 lines of code
+## Recent Fixes: Responsive Search Bar
+The search component was previously breaking on mobile devices (width < 600px) due to a rigid flex-row layout. 
+
+**Changes:**
+- **Layout:** Switched to a column layout for mobile to ensure the Search button remains visible and accessible.
+- **Interactivity:** Fixed an issue where the date-picker wouldn't trigger when clicking the icon in Safari and Firefox. 
+- **Code Quality:** Organized styles to be "M&A-ready," ensuring clean handoffs with high maintainability.

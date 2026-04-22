@@ -37,6 +37,15 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+picture, img {
+    display: block;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
 /* ==========================================
    2. HEADER & NAVIGATION
    ========================================== */
@@ -282,7 +291,7 @@ body {
     display: inline-block;
     opacity: 0;
     /* Start pushed down and tiny */
-    transform: translateY(30px) scale(0.2); 
+    transform: translateY(30px) scale(0.2);
     /* The cubic-bezier gives it that natural, bouncy "spring" effect! */
     animation: sproutUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
@@ -321,7 +330,7 @@ input[type="date"] {
     position: relative;
     appearance: none;
     -webkit-appearance: none;
-    
+
     /* 1. Add the icon as a background image */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>');
     background-repeat: no-repeat;
@@ -372,7 +381,7 @@ input[type="date"]::-moz-calendar-picker-indicator {
     }
 
     /* Make the inputs and button stretch to full width */
-    .search-form input, 
+    .search-form input,
     .search-form button {
         width: 100% !important;
         margin: 0 !important;
@@ -421,6 +430,7 @@ input[type="date"]::-moz-calendar-picker-indicator {
     border-radius: 50%;     /* Makes the picture a circle */
     object-fit: cover;
     border: 3px solid var(--primary-green);
+    border: 3px solid #2d5a27;
 }
 
 .review-text {
@@ -573,4 +583,6 @@ input[type="date"]::-moz-calendar-picker-indicator {
 .footer-bottom p {
     color: #999;
     font-size: 0.8rem;
+}
+    color: #2d5a27;
 }
