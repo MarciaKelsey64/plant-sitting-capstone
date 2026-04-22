@@ -50,7 +50,7 @@ const backBtn = document.getElementById('backToProfileBtn');
 if (targetId) {
     backBtn.href = `profile.html?id=${targetId}`;
 } else {
-    backBtn.href = `index.html`; 
+    backBtn.href = `index.html`;
 }
 
 // C. Find the empty container and the specific sitter
@@ -65,23 +65,25 @@ if (sitter) {
 
     checkoutContainer.innerHTML = `
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
-            
+
             <div style="background: #ffffff; padding: 2rem; border-radius: 12px; border: 1px solid #eaeaea; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
                 <h2 style="margin-top: 0; color: #333;">Booking Details</h2>
-                
+
                 <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">Select Dates</label>
                 <input type="date" style="width: 100%; padding: 0.8rem; margin-bottom: 1.5rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
-                
+
                 <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">Message to ${sitter.name}</label>
                 <textarea rows="4" placeholder="Tell ${sitter.name} about your plants..." style="width: 100%; padding: 0.8rem; margin-bottom: 1.5rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit;"></textarea>
-                
+
                 <button id="confirmBtn" class="view-profile-btn" style="width: 100%; font-size: 1.2rem; padding: 1rem;">Confirm Booking</button>
             </div>
 
             <div style="background: #f9f9f9; padding: 2rem; border-radius: 12px; border: 1px solid #eaeaea;">
                 <h3 style="margin-top: 0; border-bottom: 1px solid #ddd; padding-bottom: 1rem;">Order Summary</h3>
                 <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; margin-top: 1.5rem;">
+                <picture>
                     <img src="${sitter.image}" alt="${sitter.name}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;">
+                </picture>
                     <div>
                         <h4 style="margin: 0; font-size: 1.2rem;">${sitter.name}</h4>
                         <p style="margin: 0; color: #666;">⭐ ${sitter.rating} Rating</p>
@@ -104,7 +106,7 @@ if (sitter) {
     // E. THE SUCCESS ANIMATION LOGIC
     // ==========================================
     const confirmBtn = document.getElementById('confirmBtn');
-    
+
     confirmBtn.addEventListener('click', function() {
         // 1. Show processing state
         this.innerHTML = '<div class="spinner"></div> Processing Payment...';

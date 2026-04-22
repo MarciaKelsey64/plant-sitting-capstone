@@ -63,8 +63,10 @@ if (sitter) {
     profileContainer.style.padding = "0";
 
     // Now, inject the HTML
-    profileContainer.innerHTML = `
-        <img src="${sitter.image}" alt="${sitter.name}" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  profileContainer.innerHTML = `
+        <picture>
+            <img src="${sitter.image}" alt="${sitter.name}" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        </picture>
 
         <div style="text-align: left;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
