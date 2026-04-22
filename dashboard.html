@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sitter Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body style="background-color: #f4fcf6">
+    <!--Please not use inline styles-->
+    <header
+      style="
+        padding: 1rem 2rem;
+        background: white;
+        border-bottom: 1px solid #eaeaea;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      "
+    >
+      <h1 style="color: #1a7f37; margin: 0; font-size: 1.5rem">
+        Sitter Dashboard
+      </h1>
+      <span style="color: #555; font-weight: bold">👋 Welcome back, Elena</span>
+    </header>
+
+    <main
+      style="
+        max-width: 1000px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      "
+    >
+      <section>
+        <h2
+          style="
+            color: #333;
+            border-bottom: 2px solid #1a7f37;
+            padding-bottom: 0.5rem;
+          "
+        >
+          Pending Requests
+          <span
+            id="pendingCount"
+            style="
+              background: #e74c3c;
+              color: white;
+              padding: 2px 8px;
+              border-radius: 12px;
+              font-size: 0.9rem;
+            "
+            >1</span
+          >
+        </h2>
+        <div id="pendingList" style="margin-top: 1.5rem"></div>
+      </section>
+
+      <section>
+        <h2
+          style="
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 0.5rem;
+          "
+        >
+          Upcoming Jobs
+        </h2>
+        <div id="upcomingList" style="margin-top: 1.5rem"></div>
+      </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

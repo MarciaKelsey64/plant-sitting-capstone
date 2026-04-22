@@ -14,6 +14,15 @@ body {
     line-height: 1.6;
 }
 
+picture, img {
+    display: block;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
 /* ==========================================
    2. HEADER & NAVIGATION
    ========================================== */
@@ -259,7 +268,7 @@ body {
     display: inline-block;
     opacity: 0;
     /* Start pushed down and tiny */
-    transform: translateY(30px) scale(0.2); 
+    transform: translateY(30px) scale(0.2);
     /* The cubic-bezier gives it that natural, bouncy "spring" effect! */
     animation: sproutUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
@@ -298,7 +307,7 @@ input[type="date"] {
     position: relative;
     appearance: none;
     -webkit-appearance: none;
-    
+
     /* 1. Add the icon as a background image */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>');
     background-repeat: no-repeat;
@@ -349,7 +358,7 @@ input[type="date"]::-moz-calendar-picker-indicator {
     }
 
     /* Make the inputs and button stretch to full width */
-    .search-form input, 
+    .search-form input,
     .search-form button {
         width: 100% !important;
         margin: 0 !important;
@@ -363,4 +372,50 @@ input[type="date"]::-moz-calendar-picker-indicator {
     .divider {
         display: none !important;
     }
+}
+
+.reviews-section {
+    padding: 60px 20px;
+    background-color: #f9fbf9;
+    text-align: center;
+}
+
+.reviews-container {
+    display: flex;
+    flex-direction: column; /* This stacks them vertically */
+    align-items: center;    /* This centers the stack */
+    gap: 20px;
+    max-width: 800px;       /* Keeps the stack from being too wide */
+    margin: 0 auto;
+}
+
+.review-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;          /* Aligns image and text side-by-side inside the card */
+    align-items: center;
+    gap: 20px;
+    width: 100%;            /* Makes cards uniform width */
+    text-align: left;       /* Keeps the text readable */
+}
+
+.reviewer-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;     /* Makes the picture a circle */
+    object-fit: cover;
+    border: 3px solid #2d5a27;
+}
+
+.review-text {
+    font-style: italic;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.review-author {
+    font-weight: bold;
+    color: #2d5a27;
 }
