@@ -1,99 +1,186 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Plant-Sitting Marketplace | Find Trusted Sitters</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header class="site-header">
-        <div class="logo">
-            <h2>Leaf & Guardian</h2> </div>
-        <nav class="primary-nav">
-            <ul>
-                <li><a href="#become-sitter">Become a Sitter</a></li>
-                <li><a href="#sign-in">Sign In</a></li>
-            </ul>
-        </nav>
+      <div class="logo">
+        <h2>Leaf & Guardian</h2>
+      </div>
+      <nav class="primary-nav">
+        <ul>
+          <li><a href="#become-sitter">Become a Sitter</a></li>
+          <li><a href="#sign-in">Sign In</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1>Find the perfect sitter for your leafy friends.</h1>
-                <p>Book trusted, local plant sitters while you are away.</p>
-                
-            <div class="search-bar-container">
-    <form id="sitterSearchForm" class="search-form">
-        <input type="text" id="locationInput" placeholder="Zip code or neighborhood..." aria-label="Enter zip code or neighborhood" required>
-        <input type="date" id="datesInput" aria-label="Select dates for plant sitting" required>
-        <button type="submit" id="searchSubmitBtn">Search Sitters</button>
-    </form>
-</div>   
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1>Find the perfect sitter for your leafy friends.</h1>
+          <p>Book trusted, local plant sitters while you are away.</p>
+
+          <div class="search-bar-container">
+            <form id="sitterSearchForm" class="search-form">
+              <input
+                type="text"
+                id="locationInput"
+                placeholder="Zip code or neighborhood..."
+                aria-label="Enter zip code or neighborhood"
+                required
+              />
+              <input
+                type="date"
+                id="datesInput"
+                aria-label="Select dates for plant sitting"
+                required
+              />
+              <button type="submit" id="searchSubmitBtn">Search Sitters</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!--Nice HTML semantics and hierarchy-->
+      <section class="sitter-results-section">
+        <h2>Top Rated Sitters Near You</h2>
+        <div id="sitterGrid" class="sitter-grid">
+          <article class="sitter-card">
+            <img
+              src="https://images.unsplash.com/photo-1601288496920-b6154fe3626a?auto=format&fit=crop&w=600&h=360&q=80"
+              alt="Elena smiling while holding a large potted Monstera plant"
+              class="sitter-photo"
+            />
+            <div class="sitter-info">
+              <div class="sitter-header">
+                <h3>Elena R.</h3>
+                <span class="sitter-rate">$15/day</span>
+              </div>
+              <p class="sitter-tagline">
+                Monstera Specialist & Plant Whisperer
+              </p>
+              <div class="sitter-meta">
+                <span>⭐ 4.9 (24 reviews)</span>
+                <span>📍 Chapel Hill, NC</span>
+              </div>
+              <button
+                class="view-profile-btn"
+                aria-label="View Elena's full profile"
+              >
+                View Profile
+              </button>
             </div>
-        </section>
+          </article>
 
-        <section class="sitter-results-section">
-            <h2>Top Rated Sitters Near You</h2>
-            <div id="sitterGrid" class="sitter-grid">
-                
-                <article class="sitter-card">
-                    <img src="https://images.unsplash.com/photo-1601288496920-b6154fe3626a?auto=format&fit=crop&w=600&h=360&q=80" alt="Elena smiling while holding a large potted Monstera plant" class="sitter-photo">
-                    <div class="sitter-info">
-                        <div class="sitter-header">
-                            <h3>Elena R.</h3>
-                            <span class="sitter-rate">$15/day</span>
-                        </div>
-                        <p class="sitter-tagline">Monstera Specialist & Plant Whisperer</p>
-                        <div class="sitter-meta">
-                            <span>⭐ 4.9 (24 reviews)</span>
-                            <span>📍 Chapel Hill, NC</span>
-                        </div>
-                        <button class="view-profile-btn" aria-label="View Elena's full profile">View Profile</button>
-                    </div>
-                </article>
-
-                <article class="sitter-card">
-                    <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=600&h=360&q=80" alt="David standing in a lush outdoor garden greenhouse" class="sitter-photo">
-                    <div class="sitter-info">
-                        <div class="sitter-header">
-                            <h3>David T.</h3>
-                            <span class="sitter-rate">$20/day</span>
-                        </div>
-                        <p class="sitter-tagline">Outdoor Garden & Succulent Expert</p>
-                        <div class="sitter-meta">
-                            <span>⭐ 5.0 (18 reviews)</span>
-                            <span>📍 Chapel Hill, NC</span>
-                        </div>
-                        <button class="view-profile-btn" aria-label="View David's full profile">View Profile</button>
-                    </div>
-                </article>
-
-                <article class="sitter-card">
-                    <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=600&h=360&q=80" alt="Sarah carefully watering a collection of small cacti and succulents" class="sitter-photo">
-                    <div class="sitter-info">
-                        <div class="sitter-header">
-                            <h3>Sarah M.</h3>
-                            <span class="sitter-rate">$12/day</span>
-                        </div>
-                        <p class="sitter-tagline">Cacti Lover. Will water with care!</p>
-                        <div class="sitter-meta">
-                            <span>⭐ 4.7 (31 reviews)</span>
-                            <span>📍 Pittsboro, NC</span>
-                        </div>
-                        <button class="view-profile-btn" aria-label="View Sarah's full profile">View Profile</button>
-                    </div>
-                </article>
+          <article class="sitter-card">
+            <img
+              src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=600&h=360&q=80"
+              alt="David standing in a lush outdoor garden greenhouse"
+              class="sitter-photo"
+            />
+            <div class="sitter-info">
+              <div class="sitter-header">
+                <h3>David T.</h3>
+                <span class="sitter-rate">$20/day</span>
+              </div>
+              <p class="sitter-tagline">Outdoor Garden & Succulent Expert</p>
+              <div class="sitter-meta">
+                <span>⭐ 5.0 (18 reviews)</span>
+                <span>📍 Chapel Hill, NC</span>
+              </div>
+              <button
+                class="view-profile-btn"
+                aria-label="View David's full profile"
+              >
+                View Profile
+              </button>
             </div>
+          </article>
 
-        </section>
+          <article class="sitter-card">
+            <img
+              src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=600&h=360&q=80"
+              alt="Sarah carefully watering a collection of small cacti and succulents"
+              class="sitter-photo"
+            />
+            <div class="sitter-info">
+              <div class="sitter-header">
+                <h3>Sarah M.</h3>
+                <span class="sitter-rate">$12/day</span>
+              </div>
+              <p class="sitter-tagline">Cacti Lover. Will water with care!</p>
+              <div class="sitter-meta">
+                <span>⭐ 4.7 (31 reviews)</span>
+                <span>📍 Pittsboro, NC</span>
+              </div>
+              <button
+                class="view-profile-btn"
+                aria-label="View Sarah's full profile"
+              >
+                View Profile
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2026 Plant-Sitting Marketplace Capstone. All rights reserved.</p>
+      <p>
+        &copy; 2026 Plant-Sitting Marketplace Capstone. All rights reserved.
+      </p>
     </footer>
 
     <script src="app.js"></script>
-</body>
+
+    <section class="reviews-section">
+      <h2 class="section-title">What Plant Parents Are Saying</h2>
+      <div class="reviews-container">
+        <div class="review-card">
+          <img
+            src="https://randomuser.me/api/portraits/women/44.jpg"
+            alt="Sarah"
+            class="reviewer-img"
+          />
+          <div class="review-content">
+            <p class="review-text">
+              "Elena was amazing with my Monstera. She clearly knows her stuff!"
+            </p>
+            <p class="review-author">- Sarah J., Chapel Hill</p>
+          </div>
+        </div>
+        <div class="review-card">
+          <img
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+            alt="Mike"
+            class="reviewer-img"
+          />
+          <div class="review-content">
+            <p class="review-text">
+              "David saved my succulents while I was in NYC. Highly recommend!"
+            </p>
+            <p class="review-author">- Mike T., Carrboro</p>
+          </div>
+        </div>
+        <div class="review-card">
+          <img
+            src="https://randomuser.me/api/portraits/women/68.jpg"
+            alt="Linda"
+            class="reviewer-img"
+          />
+          <div class="review-content">
+            <p class="review-text">
+              "Leaf & Guardian is the only service I trust with my rare plants."
+            </p>
+            <p class="review-author">- Linda W., Durham</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

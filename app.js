@@ -62,7 +62,7 @@ searchForm.addEventListener('submit', function(event) {
 
     // 4. THE FAKE DELAY: Set a timer to simulate a cloud database
     setTimeout(() => {
-        
+
         // --- EVERYTHING INSIDE HERE HAPPENS AFTER 1.5 SECONDS ---
         const filteredSitters = sittersData.filter(sitter => sitter.zipCodes.includes(searchZip));
 
