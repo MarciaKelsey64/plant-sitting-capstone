@@ -13,6 +13,7 @@ const sitterGrid = document.getElementById('sitterGrid');
 
 searchForm.addEventListener('submit', function(event) {
     event.preventDefault(); // Stop page reload
+    event.stopPropagation(); // Stop event bubbling
 
     // 1. Grab the zip code and the actual submit button
     const searchZip = locationInput.value.trim();

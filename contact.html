@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Leaf & Guardian</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo">
+        <h2>Leaf & Guardian</h2>
+      </div>
+      <nav class="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#become-sitter">Become a Sitter</a></li>
+          <li><a href="#sign-in">Sign In</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main style="max-width: 600px; margin: 3rem auto; padding: 0 1rem;">
+      <section style="text-align: center; margin-bottom: 3rem;">
+        <h1 style="color: #1a4d2e; font-size: 2.5rem; margin-bottom: 1rem;">Get in Touch</h1>
+        <p style="font-size: 1.1rem; color: #555;">Have a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+      </section>
+
+      <form action="https://formspree.io/f/mzdykkqz" method="POST" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eaeaea;">
+        
+        <div style="margin-bottom: 1.5rem;">
+          <label for="name" style="display: block; font-weight: bold; color: #333; margin-bottom: 0.5rem;">Name</label>
+          <input type="text" id="name" name="name" required style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; box-sizing: border-box;">
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label for="email" style="display: block; font-weight: bold; color: #333; margin-bottom: 0.5rem;">Email</label>
+          <input type="email" id="email" name="email" required style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; box-sizing: border-box;">
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label for="subject" style="display: block; font-weight: bold; color: #333; margin-bottom: 0.5rem;">Subject</label>
+          <input type="text" id="subject" name="subject" required style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; box-sizing: border-box;">
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+          <label for="message" style="display: block; font-weight: bold; color: #333; margin-bottom: 0.5rem;">Message</label>
+          <textarea id="message" name="message" rows="6" required style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; font-family: inherit; box-sizing: border-box; resize: vertical;"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; font-weight: bold;">Send Message</button>
+      </form>
+
+      <p style="text-align: center; color: #999; font-size: 0.9rem; margin-top: 2rem;">
+        💚 We typically respond within 24 hours
+      </p>
+    </main>
+
+    <footer class="site-footer" style="margin-top: 4rem; padding: 2rem 1rem; border-top: 1px solid #eaeaea; text-align: center; color: #666;">
+      <p>&copy; 2026 Leaf & Guardian, Inc. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

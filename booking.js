@@ -35,11 +35,33 @@ if (sitter) {
             <div style="background: #ffffff; padding: 2rem; border-radius: 12px; border: 1px solid #eaeaea; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
                 <h2 style="margin-top: 0; color: #333;">Booking Details</h2>
 
-                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">Select Dates</label>
-                <input type="date" style="width: 100%; padding: 0.8rem; margin-bottom: 1.5rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">Start Date</label>
+                <input id="bookingStartDate" type="date" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
+
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">End Date</label>
+                <input id="bookingEndDate" type="date" style="width: 100%; padding: 0.8rem; margin-bottom: 1.5rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
 
                 <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">Message to ${sitter.name}</label>
-                <textarea rows="4" placeholder="Tell ${sitter.name} about your plants..." style="width: 100%; padding: 0.8rem; margin-bottom: 1.5rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit;"></textarea>
+                <textarea id="bookingMessage" rows="4" placeholder="Tell ${sitter.name} about your plants..." style="width: 100%; padding: 0.8rem; margin-bottom: 1.5rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit;"></textarea>
+
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #333; font-size: 1.1rem;">Payment Method</h3>
+                
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">Card Number</label>
+                <input type="text" placeholder="1234 5678 9012 3456" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-family: monospace;">
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">Expiry Date</label>
+                        <input type="text" placeholder="MM/YY" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">CVV</label>
+                        <input type="text" placeholder="123" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-family: monospace;">
+                    </div>
+                </div>
+
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">Name on Card</label>
+                <input type="text" placeholder="Full Name" style="width: 100%; padding: 0.8rem; margin-bottom: 1.5rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
 
                 <button id="confirmBtn" class="view-profile-btn" style="width: 100%; font-size: 1.2rem; padding: 1rem;">Confirm Booking</button>
             </div>
@@ -61,12 +83,52 @@ if (sitter) {
                 <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
                     <span>Service Fee</span><strong>$5.00</strong>
                 </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                    <span>Days</span><strong id="bookingDays">0</strong>
+                </div>
                 <div style="display: flex; justify-content: space-between; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #ddd; font-size: 1.2rem; font-weight: bold;">
-                    <span>Total</span><span style="color: #1a7f37;">Calculated at checkout</span>
+                    <span>Total</span><span id="orderTotal" style="color: #1a7f37;">$0.00</span>
                 </div>
             </div>
         </div>
     `;
+
+    const startDateInput = document.getElementById('bookingStartDate');
+    const endDateInput = document.getElementById('bookingEndDate');
+    const bookingDaysDisplay = document.getElementById('bookingDays');
+    const orderTotalDisplay = document.getElementById('orderTotal');
+    const ratePerDay = Number(sitter.rate.replace(/[^0-9.]/g, ''));
+    const serviceFee = 5;
+
+    const calculateTotal = () => {
+        const startValue = startDateInput.value;
+        const endValue = endDateInput.value;
+
+        if (!startValue || !endValue) {
+            bookingDaysDisplay.textContent = '0';
+            orderTotalDisplay.textContent = '$0.00';
+            return;
+        }
+
+        const start = new Date(startValue);
+        const end = new Date(endValue);
+
+        if (end < start) {
+            bookingDaysDisplay.textContent = '0';
+            orderTotalDisplay.textContent = '$0.00';
+            return;
+        }
+
+        const diffMs = end - start;
+        const days = Math.floor(diffMs / (1000 * 60 * 60 * 24)) + 1;
+        const total = ratePerDay * days + serviceFee;
+
+        bookingDaysDisplay.textContent = days.toString();
+        orderTotalDisplay.textContent = `$${total.toFixed(2)}`;
+    };
+
+    startDateInput.addEventListener('change', calculateTotal);
+    endDateInput.addEventListener('change', calculateTotal);
 
     // ==========================================
     // E. THE SUCCESS ANIMATION LOGIC
@@ -74,6 +136,22 @@ if (sitter) {
     const confirmBtn = document.getElementById('confirmBtn');
 
     confirmBtn.addEventListener('click', function() {
+        const startValue = startDateInput.value;
+        const endValue = endDateInput.value;
+
+        if (!startValue || !endValue) {
+            alert('Please select both a start and end date for your booking.');
+            return;
+        }
+
+        const start = new Date(startValue);
+        const end = new Date(endValue);
+
+        if (end < start) {
+            alert('The end date must be on or after the start date.');
+            return;
+        }
+
         // 1. Show processing state
         this.innerHTML = '<div class="spinner"></div> Processing Payment...';
         this.style.opacity = '0.8';

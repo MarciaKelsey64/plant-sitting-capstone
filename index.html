@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Plant-Sitting Marketplace | Find Trusted Sitters</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
   <body>
     <header class="site-header">
@@ -26,7 +27,7 @@
           <p>Book trusted, local plant sitters while you are away.</p>
 
           <div class="search-bar-container">
-            <form id="sitterSearchForm" class="search-form">
+            <form id="sitterSearchForm" class="search-form" action="#" method="get">
               <input
                 type="text"
                 id="locationInput"
@@ -51,11 +52,7 @@
         <h2>Top Rated Sitters Near You</h2>
         <div id="sitterGrid" class="sitter-grid">
           <article class="sitter-card">
-            <img
-              src="https://images.unsplash.com/photo-1601288496920-b6154fe3626a?auto=format&fit=crop&w=600&h=360&q=80"
-              alt="Elena smiling while holding a large potted Monstera plant"
-              class="sitter-photo"
-            />
+            
             <picture>
               <img
                 src="https://images.unsplash.com/photo-1601288496920-b6154fe3626a?auto=format&fit=crop&w=600&h=360&q=80"
@@ -75,21 +72,11 @@
                 <span>⭐ 4.9 (24 reviews)</span>
                 <span>📍 Chapel Hill, NC</span>
               </div>
-              <button
-                class="view-profile-btn"
-                aria-label="View Elena's full profile"
-              >
-                View Profile
-              </button>
-            </div>
+              <a href="profile.html?name=Elena R." class="view-profile-btn" aria-label="View Elena's full profile">View Profile</a>
           </article>
 
           <article class="sitter-card">
-            <img
-              src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=600&h=360&q=80"
-              alt="David standing in a lush outdoor garden greenhouse"
-              class="sitter-photo"
-            />
+            
             <picture>
               <img
                 src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=600&h=360&q=80"
@@ -107,21 +94,11 @@
                 <span>⭐ 5.0 (18 reviews)</span>
                 <span>📍 Chapel Hill, NC</span>
               </div>
-              <button
-                class="view-profile-btn"
-                aria-label="View David's full profile"
-              >
-                View Profile
-              </button>
-            </div>
+              <a href="profile.html?name=David T." class="view-profile-btn">View Profile</a>
           </article>
 
           <article class="sitter-card">
-            <img
-              src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=600&h=360&q=80"
-              alt="Sarah carefully watering a collection of small cacti and succulents"
-              class="sitter-photo"
-            />
+            
             <picture>
               <img
                 src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=600&h=360&q=80"
@@ -139,25 +116,13 @@
                 <span>⭐ 4.7 (31 reviews)</span>
                 <span>📍 Pittsboro, NC</span>
               </div>
-              <button
-                class="view-profile-btn"
-                aria-label="View Sarah's full profile"
-              >
-                View Profile
-              </button>
-            </div>
+              <a href="profile.html?name=Sarah M." class="view-profile-btn">View Profile</a>
           </article>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <p>
-        &copy; 2026 Plant-Sitting Marketplace Capstone. All rights reserved.
-      </p>
-    </footer>
-
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
 
     <section class="reviews-section">
     <h2 class="section-title">What Plant Parents Are Saying</h2>
@@ -232,7 +197,7 @@
         <div class="footer-col">
             <h4>About Leaf & Guardian</h4>
             <a href="#">About Us</a>
-            <a href="#">Contact Us</a>
+            <a href="contact.html">Contact Us</a>
             <a href="#">Press</a>
             <a href="#">Careers</a>
             <a href="#">Investor Relations</a>
@@ -254,56 +219,12 @@
     </div>
 
     <div class="social-icons">
-    <a href="#" style="text-decoration:none;"> Facebook </a>
-    <a href="#" style="text-decoration:none;"> Instagram </a>
-    <a href="#" style="text-decoration:none;"> LinkedIn </a>
+    <a href="#" style="text-decoration:none; font-size: 1.5rem; color: #1877F2;"><i class="fab fa-facebook"></i></a>
+    <a href="#" style="text-decoration:none; font-size: 1.5rem; color: #E4405F;"><i class="fab fa-instagram"></i></a>
+    <a href="#" style="text-decoration:none; font-size: 1.5rem; color: #0A66C2;"><i class="fab fa-linkedin"></i></a>
 </div>
         <p>&copy; 2026 Leaf & Guardian, Inc. All Rights Reserved.</p>
     </div>
 </footer>
   </body>
-      <h2 class="section-title">What Plant Parents Are Saying</h2>
-      <div class="reviews-container">
-        <div class="review-card">
-          <img
-            src="https://randomuser.me/api/portraits/women/44.jpg"
-            alt="Sarah"
-            class="reviewer-img"
-          />
-          <div class="review-content">
-            <p class="review-text">
-              "Elena was amazing with my Monstera. She clearly knows her stuff!"
-            </p>
-            <p class="review-author">- Sarah J., Chapel Hill</p>
-          </div>
-        </div>
-        <div class="review-card">
-          <img
-            src="https://randomuser.me/api/portraits/men/32.jpg"
-            alt="Mike"
-            class="reviewer-img"
-          />
-          <div class="review-content">
-            <p class="review-text">
-              "David saved my succulents while I was in NYC. Highly recommend!"
-            </p>
-            <p class="review-author">- Mike T., Carrboro</p>
-          </div>
-        </div>
-        <div class="review-card">
-          <img
-            src="https://randomuser.me/api/portraits/women/68.jpg"
-            alt="Linda"
-            class="reviewer-img"
-          />
-          <div class="review-content">
-            <p class="review-text">
-              "Leaf & Guardian is the only service I trust with my rare plants."
-            </p>
-            <p class="review-author">- Linda W., Durham</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </body>
-</html>
+    

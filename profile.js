@@ -1,58 +1,41 @@
-// ==========================================
-// 1. THE MOCK DATABASE (Our Shared Vault)
-// ==========================================
 import { sittersData } from './db.js';
 
-// ==========================================
-// 2. THE PROFILE LOGIC (The Catcher's Mitt)
-// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    // Get the sitter id or name from the URL (e.g., profile.html?id=sitter_01 or profile.html?name=Elena R.)
+    const params = new URLSearchParams(window.location.search);
+    const sitterId = params.get('id');
+    const sitterName = params.get('name');
 
-// A. Look at the browser's URL bar and extract the ID
-const urlParams = new URLSearchParams(window.location.search);
-const targetId = urlParams.get('id');
+    if (!sitterId && !sitterName) {
+        console.error("No sitter id or name provided in URL");
+        return;
+    }
 
-// B. Find the empty container on our HTML page
-const profileContainer = document.getElementById('profileContainer');
+    // Find the sitter data by id first, then fallback to name
+    const sitter = sitterId
+        ? sittersData.find(s => s.id === sitterId)
+        : sittersData.find(s => s.name === sitterName);
 
-// C. Search our database to find the EXACT sitter that matches the ID
-const sitter = sittersData.find(person => person.id === targetId);
+    if (!sitter) {
+        console.error("Sitter not found:", sitterId || sitterName);
+        document.getElementById('profileContainer').innerHTML = '<p>Sitter not found.</p>';
+        return;
+    }
 
-// D. Paint the data onto the screen!
-if (sitter) {
-    // We found them! We replace the "Catching data..." text with a beautiful profile layout.
-
-    // First, let's remove the grey background box styling from the container
-    profileContainer.style.background = "transparent";
-    profileContainer.style.padding = "0";
-
-    // Now, inject the HTML
+    // Display the sitter profile
+    const profileContainer = document.getElementById('profileContainer');
     profileContainer.innerHTML = `
-        <img src="${sitter.image}" alt="${sitter.name}" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-  profileContainer.innerHTML = `
-        <picture>
-            <img src="${sitter.image}" alt="${sitter.name}" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        </picture>
-
-        <div style="text-align: left;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                <h1 style="margin: 0; font-size: 2.5rem; color: #333;">${sitter.name}</h1>
-                <h2 style="margin: 0; color: #1a7f37;">${sitter.rate}</h2>
-            </div>
-
-            <p style="font-size: 1.2rem; color: #666; margin-bottom: 1.5rem;">📍 ${sitter.location} &nbsp;|&nbsp; ⭐ ${sitter.rating} (${sitter.reviews} Reviews)</p>
-
-            <div style="background: #f4fcf6; border: 1px solid #c3e6cb; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
-                <h3 style="margin-top: 0; color: #1a7f37;">About Me</h3>
-                <p style="line-height: 1.6; color: #444; margin-bottom: 0;">${sitter.bio}</p>
-            </div>
-
-            <a href="booking.html?id=${sitter.id}" class="view-profile-btn" style="display:block; text-align:center; text-decoration:none; box-sizing:border-box; width: 100%; font-size: 1.2rem; padding: 1rem;">Request to Book ${sitter.name}</a>
+        <img src="${sitter.image}" alt="${sitter.name}" style="width: 200px; height: 200px; border-radius: 12px; object-fit: cover; margin: 0 auto 1.5rem; display: block;">
+        <h1>${sitter.name}</h1>
+        <p style="font-size: 1.1rem; color: #1a7f37; margin: 0.5rem 0; font-weight: bold;">${sitter.rate}</p>
+        <p style="font-size: 0.95rem; color: #555; margin: 1rem 0;">${sitter.tagline}</p>
+        <div style="margin: 1.5rem 0; font-size: 0.95rem;">
+            <p><strong>Rating:</strong> ⭐ ${sitter.rating} (${sitter.reviews} reviews)</p>
+            <p><strong>Location:</strong> ${sitter.location}</p>
+            <p><strong>Service Areas:</strong> ${sitter.zipCodes.join(', ')}</p>
         </div>
+        <a href="booking.html?id=${sitter.id}" style="display: inline-block; padding: 0.8rem 2rem; background: #1a7f37; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 1.5rem;">Book This Sitter</a>
     `;
-} else {
-    // Uh oh, the ID wasn't found (e.g., someone typed ?id=fake_id into the URL)
-    profileContainer.innerHTML = `
-        <h2 style="color: #d32f2f;">Profile Not Found</h2>
-        <p>We couldn't find a plant sitter with that ID. They may have moved or deactivated their account.</p>
-    `;
-}
+
+    console.log("Profile page loaded for:", sitterName);
+});
