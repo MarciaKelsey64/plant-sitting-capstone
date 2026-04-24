@@ -5,38 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Secure Checkout</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
   <body>
-    <header
-      style="
-        padding: 1rem;
-        border-bottom: 1px solid #eaeaea;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      "
-    >
+    <header class="site-header">
+      <div class="logo">
+        <h2>Leaf & Guardian</h2>
+      </div>
+      <nav class="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#become-sitter">Become a Sitter</a></li>
+          <li><a href="#sign-in">Sign In</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <header class="booking-header">
       <a
         href="#"
         id="backToProfileBtn"
-        style="
-          color: #1a7f37;
-          text-decoration: none;
-          font-weight: bold;
-          font-size: 1.1rem;
-        "
+        class="booking-back-link"
       >
         &larr; Back to Profile
       </a>
-      <span style="color: #666; font-size: 0.9rem">🔒 Secure Booking</span>
+      <span class="booking-secure-indicator">🔒 Secure Booking</span>
     </header>
 
-    <main style="max-width: 800px; margin: 3rem auto; padding: 0 1rem">
-      <div id="checkoutContainer" style="text-align: center; padding: 3rem">
+    <main class="booking-main">
+      <div id="checkoutContainer" class="booking-container">
         <h2>Initializing secure checkout...</h2>
         <p>Preparing your booking details.</p>
       </div>
     </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>Learn More</h4>
+          <a href="#">Read Our Blog</a>
+          <a href="#">Leaf & Guardian Protect</a>
+          <a href="#">Safety</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>About Leaf & Guardian</h4>
+          <a href="#">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="#">Press</a>
+          <a href="#">Careers</a>
+          <a href="#">Investor Relations</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Need Help?</h4>
+          <a href="#">Help Center</a>
+        </div>
+
+        <div class="footer-col newsletter">
+          <h4>Get plant care tips in your inbox</h4>
+          <div class="signup-group">
+            <input type="email" placeholder="Your Email...">
+            <button type="button" class="btn-primary">Sign up</button>
+          </div>
+          <p class="disclaimer">By providing your email, you agree to our Privacy Statement.</p>
+        </div>
+      </div>
+
+      <div class="social-icons">
+        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p>&copy; 2026 Leaf & Guardian, Inc. All Rights Reserved.</p>
+    </footer>
 
     <script type="module" src="booking.js"></script>
   </body>

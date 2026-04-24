@@ -1,8 +1,6 @@
 // ==========================================
 // 1. THE MOCK BOOKING DATABASE
 // ==========================================
-// This represents the requests coming into Elena's account.
-// Notice the "status" property - this is what our code will look at!
 let bookings = [
     {
         id: "job_001",

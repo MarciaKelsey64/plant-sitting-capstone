@@ -5,72 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sitter Dashboard</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
-  <body style="background-color: #f4fcf6">
-    <!--Please not use inline styles-->
-    <header
-      style="
-        padding: 1rem 2rem;
-        background: white;
-        border-bottom: 1px solid #eaeaea;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      "
-    >
-      <h1 style="color: #1a7f37; margin: 0; font-size: 1.5rem">
-        Sitter Dashboard
-      </h1>
-      <span style="color: #555; font-weight: bold">👋 Welcome back, Elena</span>
+  <body>
+    <header class="site-header">
+      <div class="logo">
+        <h2>Leaf & Guardian</h2>
+      </div>
+      <nav class="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#become-sitter">Become a Sitter</a></li>
+          <li><a href="#sign-in">Sign In</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <main
-      style="
-        max-width: 1000px;
-        margin: 3rem auto;
-        padding: 0 1rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-      "
-    >
-      <section>
-        <h2
-          style="
-            color: #333;
-            border-bottom: 2px solid #1a7f37;
-            padding-bottom: 0.5rem;
-          "
-        >
+    <header class="dashboard-header">
+      <h1 class="dashboard-title">
+        Sitter Dashboard
+      </h1>
+      <span class="dashboard-welcome">👋 Welcome back, Elena</span>
+    </header>
+
+    <main class="dashboard-main">
+      <section class="pending-section">
+        <h2>
           Pending Requests
           <span
             id="pendingCount"
-            style="
-              background: #e74c3c;
-              color: white;
-              padding: 2px 8px;
-              border-radius: 12px;
-              font-size: 0.9rem;
-            "
+            class="pending-count"
             >1</span
           >
         </h2>
-        <div id="pendingList" style="margin-top: 1.5rem"></div>
+        <div id="pendingList" class="pending-list"></div>
       </section>
 
-      <section>
-        <h2
-          style="
-            color: #333;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 0.5rem;
-          "
-        >
+      <section class="upcoming-section">
+        <h2>
           Upcoming Jobs
         </h2>
-        <div id="upcomingList" style="margin-top: 1.5rem"></div>
+        <div id="upcomingList" class="upcoming-list"></div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>Learn More</h4>
+          <a href="#">Read Our Blog</a>
+          <a href="#">Leaf & Guardian Protect</a>
+          <a href="#">Safety</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>About Leaf & Guardian</h4>
+          <a href="#">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="#">Press</a>
+          <a href="#">Careers</a>
+          <a href="#">Investor Relations</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Need Help?</h4>
+          <a href="#">Help Center</a>
+        </div>
+
+        <div class="footer-col newsletter">
+          <h4>Get plant care tips in your inbox</h4>
+          <div class="signup-group">
+            <input type="email" placeholder="Your Email...">
+            <button type="button" class="btn-primary">Sign up</button>
+          </div>
+          <p class="disclaimer">By providing your email, you agree to our Privacy Statement.</p>
+        </div>
+      </div>
+
+      <div class="social-icons">
+        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p>&copy; 2026 Leaf & Guardian, Inc. All Rights Reserved.</p>
+    </footer>
 
     <script src="dashboard.js"></script>
   </body>
