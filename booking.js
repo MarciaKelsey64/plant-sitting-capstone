@@ -30,64 +30,64 @@ if (sitter) {
     checkoutContainer.style.textAlign = "left";
 
     checkoutContainer.innerHTML = `
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+        <div class="checkout-grid">
 
-            <div style="background: #ffffff; padding: 2rem; border-radius: 12px; border: 1px solid #eaeaea; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-                <h2 style="margin-top: 0; color: #333;">Booking Details</h2>
+            <div class="booking-details-card">
+                <h2>Booking Details</h2>
 
-                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">Start Date</label>
-                <input id="bookingStartDate" type="date" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
+                <label class="booking-label">Start Date</label>
+                <input id="bookingStartDate" type="date" class="booking-input">
 
-                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">End Date</label>
-                <input id="bookingEndDate" type="date" style="width: 100%; padding: 0.8rem; margin-bottom: 1.5rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
+                <label class="booking-label">End Date</label>
+                <input id="bookingEndDate" type="date" class="booking-input">
 
-                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">Message to ${sitter.name}</label>
-                <textarea id="bookingMessage" rows="4" placeholder="Tell ${sitter.name} about your plants..." style="width: 100%; padding: 0.8rem; margin-bottom: 1.5rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit;"></textarea>
+                <label class="booking-label">Message to ${sitter.name}</label>
+                <textarea id="bookingMessage" rows="4" placeholder="Tell ${sitter.name} about your plants..." class="booking-textarea"></textarea>
 
                 <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #333; font-size: 1.1rem;">Payment Method</h3>
                 
-                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">Card Number</label>
-                <input type="text" placeholder="1234 5678 9012 3456" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-family: monospace;">
+                <label class="booking-label">Card Number</label>
+                <input type="text" placeholder="1234 5678 9012 3456" class="booking-input booking-input-mono">
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="expiry-cvv-grid">
                     <div>
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">Expiry Date</label>
-                        <input type="text" placeholder="MM/YY" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
+                        <label class="booking-label">Expiry Date</label>
+                        <input type="text" placeholder="MM/YY" class="booking-input booking-input-no-margin">
                     </div>
                     <div>
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">CVV</label>
-                        <input type="text" placeholder="123" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-family: monospace;">
+                        <label class="booking-label">CVV</label>
+                        <input type="text" placeholder="123" class="booking-input booking-input-no-margin booking-input-mono">
                     </div>
                 </div>
 
-                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555;">Name on Card</label>
-                <input type="text" placeholder="Full Name" style="width: 100%; padding: 0.8rem; margin-bottom: 1.5rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
+                <label class="booking-label">Name on Card</label>
+                <input type="text" placeholder="Full Name" class="booking-input booking-input-large-margin">
 
-                <button id="confirmBtn" class="view-profile-btn" style="width: 100%; font-size: 1.2rem; padding: 1rem;">Confirm Booking</button>
+                <button id="confirmBtn" class="view-profile-btn booking-confirm-btn">Confirm Booking</button>
             </div>
 
-            <div style="background: #f9f9f9; padding: 2rem; border-radius: 12px; border: 1px solid #eaeaea;">
-                <h3 style="margin-top: 0; border-bottom: 1px solid #ddd; padding-bottom: 1rem;">Order Summary</h3>
-                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; margin-top: 1.5rem;">
+            <div class="order-summary-card">
+                <h3>Order Summary</h3>
+                <div class="sitter-summary-info">
                 <picture>
-                    <img src="${sitter.image}" alt="${sitter.name}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;">
+                    <img src="${sitter.image}" alt="${sitter.name}" class="sitter-summary-image">
                 </picture>
                     <div>
-                        <h4 style="margin: 0; font-size: 1.2rem;">${sitter.name}</h4>
-                        <p style="margin: 0; color: #666;">⭐ ${sitter.rating} Rating</p>
+                        <h4 class="sitter-summary-name">${sitter.name}</h4>
+                        <p class="sitter-summary-rating">⭐ ${sitter.rating} Rating</p>
                     </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                <div class="order-line">
                     <span>Daily Rate</span><strong>${sitter.rate}</strong>
                 </div>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                <div class="order-line">
                     <span>Service Fee</span><strong>$5.00</strong>
                 </div>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                <div class="order-line">
                     <span>Days</span><strong id="bookingDays">0</strong>
                 </div>
-                <div style="display: flex; justify-content: space-between; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #ddd; font-size: 1.2rem; font-weight: bold;">
-                    <span>Total</span><span id="orderTotal" style="color: #1a7f37;">$0.00</span>
+                <div class="order-total-line">
+                    <span>Total</span><span id="orderTotal" class="order-total-amount">$0.00</span>
                 </div>
             </div>
         </div>

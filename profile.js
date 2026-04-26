@@ -25,16 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Display the sitter profile
     const profileContainer = document.getElementById('profileContainer');
     profileContainer.innerHTML = `
-        <img src="${sitter.image}" alt="${sitter.name}" style="width: 200px; height: 200px; border-radius: 12px; object-fit: cover; margin: 0 auto 1.5rem; display: block;">
+        <img src="${sitter.image}" alt="${sitter.name}" class="profile-image">
         <h1>${sitter.name}</h1>
-        <p style="font-size: 1.1rem; color: #1a7f37; margin: 0.5rem 0; font-weight: bold;">${sitter.rate}</p>
-        <p style="font-size: 0.95rem; color: #555; margin: 1rem 0;">${sitter.tagline}</p>
-        <div style="margin: 1.5rem 0; font-size: 0.95rem;">
+        <p class="profile-rate">${sitter.rate}</p>
+        <p class="profile-tagline">${sitter.tagline}</p>
+        <div class="profile-meta">
             <p><strong>Rating:</strong> ⭐ ${sitter.rating} (${sitter.reviews} reviews)</p>
             <p><strong>Location:</strong> ${sitter.location}</p>
             <p><strong>Service Areas:</strong> ${sitter.zipCodes.join(', ')}</p>
         </div>
-        <a href="booking.html?id=${sitter.id}" style="display: inline-block; padding: 0.8rem 2rem; background: #1a7f37; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 1.5rem;">Book This Sitter</a>
+        <a href="booking.html?id=${sitter.id}" class="profile-book-btn">Book This Sitter</a>
     `;
 
     console.log("Profile page loaded for:", sitterName);

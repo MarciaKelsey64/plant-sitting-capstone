@@ -711,6 +711,44 @@ input[type="date"]::-moz-calendar-picker-indicator {
     border-radius: 12px;
 }
 
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+    display: block;
+}
+
+.profile-rate {
+    font-size: 1.1rem;
+    color: #1a7f37;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+.profile-tagline {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 1rem 0;
+}
+
+.profile-meta {
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+}
+
+.profile-book-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: #1a7f37;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 1.5rem;
+}
+
 /* Booking page styles */
 .booking-header {
   padding: 1rem;
@@ -741,4 +779,134 @@ input[type="date"]::-moz-calendar-picker-indicator {
 .booking-container {
   text-align: center;
   padding: 3rem;
+}
+
+/* Checkout form styles */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.booking-details-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.booking-details-card h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.booking-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.booking-input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.booking-textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.booking-input-mono {
+  font-family: monospace;
+}
+
+.booking-input-no-margin {
+  margin-bottom: 0;
+}
+
+.booking-input-large-margin {
+  margin-bottom: 1.5rem;
+}
+
+.booking-confirm-btn {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.expiry-cvv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.order-summary-card {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #eaeaea;
+}
+
+.order-summary-card h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+
+.sitter-summary-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.sitter-summary-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.sitter-summary-name {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.sitter-summary-rating {
+  margin: 0;
+  color: #666;
+}
+
+.order-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.order-total-line {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ddd;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.order-total-amount {
+  color: #1a7f37;
 }
